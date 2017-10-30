@@ -1,0 +1,27 @@
+Step 1-
+In the file lulesh.h there is a section which looks like-
+//FTS_Project
+//#define DUMP_POSX 
+//#define DUMP_POSY 
+//#define DUMP_POSZ 
+//#define DUMP_DETERM 
+//#define RUN_POSY_ASSERTION 
+//endFTS_Project
+
+By default all the above defines are commented. Uncomment only one, corresponding to the variable you want to dump. RUN_POSY_ASSERTION runs with the embedded assertion for variable domain.y. Uncomment this if you want to see the output of this.
+
+Step 2-
+Create a directory called 'data' within the dir lulesh
+The dumped variables are stored in this directory. 
+
+Step 3-
+make clean
+make
+
+Step 4 (optional to ensure that MPI is added to the lib path)-
+export LD_LIBRARY_PATH=/opt/mpich2-gcc/1.4.1p1/lib64:$LD_LIBRARY_PATH
+
+Step 5-
+mpiexec -n 8 ./lulesh2.0 -s <problem size/int>
+ex- mpiexec -n 8 ./lulesh2.0 -s 6
+

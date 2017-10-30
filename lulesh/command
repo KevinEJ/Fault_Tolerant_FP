@@ -1,0 +1,4 @@
+rm -rf data/*
+rm -rf *.o
+make
+mpiexec -n 8 ./lulesh2.0 -s 9

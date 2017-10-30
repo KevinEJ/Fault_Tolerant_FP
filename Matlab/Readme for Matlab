@@ -1,0 +1,37 @@
+This folder has 3 files
+
+main.m- This file has to be modified as described below
+getFeat2.m- This generates feature vectors to feed to the neural net
+plot_roc- plots the roc given the errors for positive and negetive test samples.
+
+
+
+Step 1-
+Before running main.m copy the dumped variable across each problem size and append it as one file-
+For example, if you are working on problem size 6, you can store all the inputs in a variable called problem size 6 and run the following command. This would read the csv files from all the processors and put the data in the matrix 'ips6'
+
+ips6=[load('0_var.csv') load('1_var.csv') load('2_var.csv') load('3_var.csv') load('4_var.csv') load('5_var.csv') load('6_var.csv') load('7_var.csv')];
+
+Repeat this step for all the problem sizes you wish to work on.
+
+
+
+Step 2-
+generate features for each of the 'ips' using the function 'getFeat2'. Store the output of this function into a variable feat. Ex-
+feat_temp = getFeat2(ips6,6);
+feat=getFeat2(ips5,5);
+
+Repeat this for all the problem sizes. See 'main.m' for reference.
+
+
+
+Step 3-
+Change the following values in main.m and run the code
+hiddenLayerSize = 5;
+persForTest=0.005;
+
+
+
+
+
+
